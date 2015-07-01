@@ -9,43 +9,58 @@
 #ifndef __XXL__OverScrollView__
 #define __XXL__OverScrollView__
 
-#include <iostream>
-#include "cocos2d.h"
-#include <extensions/cocos-ext.h>
-
-USING_NS_CC;
-USING_NS_CC_EXT;
-
-class OverScrollView : public Layer,public ScrollViewDelegate
+#include "GameFunctions.h"
+#include "OverTableView.h"
+class OverScrollView;
+class OverTableView;
+class OverScrollViewDelegate
 {
 public:
-
-	CREATE_FUNC(OverScrollView);
-	virtual bool init();
-
-	//scrollView滚动的时候会调用
-	void scrollViewDidScroll(extension::ScrollView* view);
-	//缩放的时候会调用
-	void scrollViewDidZoom(extension::ScrollView* view);
-
-	virtual void onEnter();
-	virtual void onExit();
-
-	virtual bool onTouchBegan(Touch* touch,Event* unused_event);
-	virtual void onTouchMoved(Touch* touch,Event* unused_event);
-	virtual void onTouchEnded(Touch* touch,Event* unused_event);
-	virtual void onTouchCancelled(Touch* touch,Event* unused_event);
-
-protected:
-	OverScrollView();
-	~OverScrollView();
-
-	//根据手势滑动的距离和方向滚动图层
-	void adjustScrollView(float offset);
-	extension::ScrollView* m_pScrollView;
-	Point m_startPoint,m_endPoint;
-
-
+    OverScrollViewDelegate(){};
+    virtual ~OverScrollViewDelegate(){};
+    virtual Size sizeForPerPage()=0;
+    virtual void pageViewDidScroll(OverScrollView* scrollView){};
+};
+class OverScrollView : public extension::ScrollView
+{
+public:
+    static OverScrollView* create(OverScrollViewDelegate* delegate);
+    virtual bool init(OverScrollViewDelegate* delegate);
+    virtual void setContentOffsetInDuration(Vec2 offset,float dt);
+    virtual void setContentOffset(Vec2 offset);
+    
+    EventListenerTouchOneByOne* listener;
+    int pageCount;
+    
+    Node* getPageAtIndex(int index);
+    int getCurPageIndex();
+    
+    virtual bool onTouchBegan(Touch* touch,Event* unused_event);
+    virtual void onTouchMoved(Touch* touch,Event* unused_event);
+    virtual void onTouchEnded(Touch* touch,Event* unused_event);
+    virtual void onTouchCancelled(Touch* touch,Event* unused_event);
+    OverTableView* pTableView;
+    Armature *qiehuan;
+    bool _isChmap;
+    Sprite* pChmap;
+    void chmapEffect(float offset);
+    void horizontalGPS(bool flag=true);
+    void verticalGPS();
+    void extractFun();
+    void simulateBtn();
+    
+private:
+    OverScrollView();
+    ~OverScrollView();
+    CC_SYNTHESIZE(OverScrollViewDelegate*,_delegate,Delegate);
+    //根据手势滑动的距离和方向滚动图层;
+    void adjustScrollView(float offset);
+    void performedAnimatedScroll(float dt);
+    Point m_startPoint,m_endPoint;
+    float current_offset;
+    int current_index;
+ 
+    
 };
 
 #endif /* defined(__XXL__OverScrollView__) */

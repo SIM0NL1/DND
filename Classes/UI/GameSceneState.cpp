@@ -1,4 +1,4 @@
-//
+﻿//
 //	GameSceneState.cpp
 //	Author:Simon
 //	Date:  2015.5.22
@@ -9,6 +9,9 @@
 #include "GameEnter.h"
 #include "GameMain.h"
 #include "GameMissionSet.h"
+#include "GameUIData.h"
+#include "../GameUILayer.h"
+#include "GameMusicControl.h"
 
 GameSceneState* GameSceneState::m_self;
 GameSceneState::GameSceneState()
@@ -46,23 +49,28 @@ void GameSceneState::switchScene(SceneState state,float t/*=0*/)
 	Scene* scene = nullptr;
 	switch (state)
 	{
-	case SceneState::UIGameEnter:
-		{
+        case SceneState::UIGameEnter:
+        {
 			scene = GameEnter::createScene();
 			break;
 		}
-	case SceneState::UIGameMain:
-		{
+        case SceneState::UIGameMain:
+        {
 			scene = GameMain::createScene();
 			break;
 		}
-	case SceneState::UIGameMissionSet:
+        case SceneState::UIGameMissionSet:
 		{
 			scene = GameMissionSet::createScene();
 			break;
 		}
-	default:
-		break;
+        case SceneState::DDGameUILayer:
+        {
+            scene = GameUILayer::gameScene();
+            break;
+        }
+        default:
+            break;
 	}
 
 	//更新状态;
@@ -75,6 +83,7 @@ void GameSceneState::switchScene(SceneState state,float t/*=0*/)
 
 void GameSceneState::replaceScene(Scene* scene,float t)
 {
+    replaceSpecial();
 	if (t)
 	{
 		Director::getInstance()->replaceScene(TransitionFade::create(t,scene));
@@ -98,4 +107,20 @@ SceneState GameSceneState::getLastState() const
 SceneState GameSceneState::getNowState() const
 {
 	return m_stateNow;
+}
+
+
+void GameSceneState::replaceSpecial()
+{
+    if (m_stateLast == SceneState::UIGameMain)
+    {
+        float offset = g_pGameMain->m_pPageView->pTableView->tableView->getContentOffset().y;
+        GameUIData::getInstance()->setVerticalGps(offset);
+        int index = g_pGameMain->m_pPageView->getCurPageIndex();
+        GameUIData::getInstance()->setVerticalIndex(index);
+    }
+    else if (m_stateLast == SceneState::DDGameUILayer)
+    {
+        GameMusicControl::getInstance()->musicOn();
+    }
 }

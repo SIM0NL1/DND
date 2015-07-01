@@ -1,4 +1,4 @@
-//
+﻿//
 //	GameNormalMission.cpp
 //	Author:Simon
 //	Date:  2015.5.18
@@ -10,6 +10,7 @@
 #include "GameUIData.h"
 #include "GameNormalMap.h"
 #include "GameSceneState.h"
+#include "GameMusicControl.h"
 
 GameNormalMission::GameNormalMission()
 {
@@ -48,6 +49,7 @@ void GameNormalMission::initMission()
 	m_dizuoSize = m_btnDizuo->getContentSize();
 	m_btnDizuo->setPosition(Vec2(m_dizuoSize.width*0.5,m_dizuoSize.height*0.5));
 	this->addChild(m_btnDizuo,Z_First);
+	m_btnDizuo->setSwallowTouches(false);
 
 	m_btnStone = Button :: create(RESOURCE("stone_001.png"),RESOURCE("stone_003.png"),RESOURCE("stone_002.png"));
 	m_btnStone->setTag(T_Second);
@@ -56,6 +58,7 @@ void GameNormalMission::initMission()
 	m_stoneSize = m_btnStone->getContentSize();
 	m_btnStone->setPosition(Vec2(m_dizuoSize.width*0.5,m_dizuoSize.height+15.f));
 	this->addChild(m_btnStone,Z_Second);
+	m_btnStone->setSwallowTouches(false);
 
 	m_labMissionId = Label::createWithCharMap(RESOURCE("jindu_number.png"),16,25,'0');
 	m_labMissionId->setAnchorPoint(Vec2(0.5f,0.5f));
@@ -69,30 +72,25 @@ void GameNormalMission::BtnCall(Ref* pSender,Widget::TouchEventType type)
 	int tag = ((Button*)pSender)->getTag();
 	switch (type)
 	{
-	case Widget::TouchEventType::BEGAN:
-		GameFunctions::getInstance()->g_bFlagForMission = false;
-		break;
-	case Widget::TouchEventType::MOVED:
-		GameFunctions::getInstance()->g_bFlagForMission = false;
-		break;
-	case Widget::TouchEventType::ENDED:
-		{
-			GameFunctions::getInstance()->g_bFlagForMission = true;
-			if (tag&1)
-			{
-				onBtnDizuo();
-			}
-			else
-			{
-				onBtnStone();
-			}
-			break;
-		}
-	case Widget::TouchEventType::CANCELED:
-		GameFunctions::getInstance()->g_bFlagForMission = true;
-		break;
-	default:
-		break;
+        case Widget::TouchEventType::ENDED:
+            {
+                Point start = ((Button*)pSender)->getTouchBeganPosition();
+                Point end = ((Button*)pSender)->getTouchEndPosition();
+                if (fabs(end.y-start.y)<10)
+                {
+                    if (tag&1)
+                    {
+                        onBtnDizuo();
+                    }
+                    else
+                    {
+                        onBtnStone();
+                    }
+
+                }
+            }
+            break;
+        default:break;
 	}
 }
 
@@ -111,7 +109,8 @@ void GameNormalMission::setMissionState(GameMissionState state)
 			m_btnStone->setBright(false);
 			m_btnStone->setEnabled(false);
 			m_btnDizuo->setEnabled(false);
-			m_labMissionId->setPositionY(m_labMissionId->getPositionY()-20.f);
+			//m_labMissionId->setPositionY(m_labMissionId->getPositionY()-20.f);
+            m_labMissionId->setVisible(false);
 			break;
 		}
 	case GameMissionState::MISSION_NOW:
@@ -140,8 +139,8 @@ void GameNormalMission::onBtnStone()
 {
 	int id = this->getTag();
 	log(" %d  GameNormalMission::onBtnStone",id);
-    
-    GameUIData::getInstance()->setNormalMissionProgress(id);
+    GameMusicControl::getInstance()->btnPlay(1);
+    GameUIData::getInstance()->setCurNormalMission(id);
 	SCENE_CHANGE_FADE(SceneState::UIGameMissionSet);
 }
 
@@ -166,16 +165,24 @@ void GameNormalMission::setMissionPorperty(int id)
 
 void GameNormalMission::missionOpen()
 {
-	m_btnStone->setBright(true);
-	m_btnStone->setEnabled(true);
-	m_btnDizuo->setEnabled(true);
+    m_btnStone->setBright(true);
+    m_btnStone->setEnabled(true);
+    m_btnDizuo->setEnabled(true);
+    int id = this->getTag();
+    float delayTime = 2.f;
+    delayTime += id%4*0.5;
+    float offset = id%10+8;
 
-	ArmatureDataManager::getInstance()->addArmatureFileInfo(RESOURCE("animature/guang02_effect/guang02_effect0.png"),RESOURCE("animature/guang02_effect/guang02_effect0.plist"),RESOURCE("animature/guang02_effect/guang02_effect.ExportJson"));
-	Armature* guangEffect = Armature::create("guang02_effect");
-	guangEffect->setAnchorPoint(Vec2(0.5f,0.5f));
-	guangEffect->setPosition(Vec2(m_dizuoSize.width*0.5,m_dizuoSize.height));
-	m_btnDizuo->addChild(guangEffect,Z_First);
-	guangEffect->getAnimation()->playWithIndex(0);
+    Armature* guangEffect = Armature::create("guang02_effect");
+    guangEffect->setAnchorPoint(Vec2(0.5f,0.5f));
+    guangEffect->setPosition(Vec2(m_dizuoSize.width*0.5,m_dizuoSize.height));
+    m_btnDizuo->addChild(guangEffect,Z_First);
+    guangEffect->getAnimation()->playWithIndex(0);
+    m_btnStone->runAction(RepeatForever::create(Sequence::create(MoveBy::create(delayTime,Vec2(0,offset))
+                                                                 ,DelayTime::create(0.2f)
+                                                                 ,MoveBy::create(delayTime,Vec2(0,-offset))
+                                                                 ,DelayTime::create(0.2f)
+                                                                 ,nullptr)));
 }
 
 void GameNormalMission::missionNow()
@@ -185,6 +192,7 @@ void GameNormalMission::missionNow()
 	halo->setPosition(Vec2(m_stoneSize.width*0.5,m_stoneSize.height*0.5+12));
 	m_btnStone->addChild(halo,Z_Back);
 	halo->runAction(RepeatForever::create(RotateBy::create(6.f,360.f)));
+    halo->runAction(RepeatForever::create(Sequence::create(ScaleTo::create(1.f,0.6f),ScaleTo::create(1.f,1.f),nullptr)));
 }
 
 void GameNormalMission::setMissionStartNum(int missionId,int startNum)

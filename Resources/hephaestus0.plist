@@ -7,9 +7,9 @@
 			<key>hephaestus_tx05.png</key>
 			<dict>
 				<key>width</key>
-				<integer>124</integer>
+				<integer>76</integer>
 				<key>height</key>
-				<integer>124</integer>
+				<integer>51</integer>
 				<key>originalWidth</key>
 				<integer>124</integer>
 				<key>originalHeight</key>
@@ -19,142 +19,161 @@
 				<key>y</key>
 				<integer>0</integer>
 				<key>offsetX</key>
-				<real>0</real>
+				<real>2</real>
 				<key>offsetY</key>
-				<real>0</real>
+				<real>-14.5</real>
 			</dict>
 			<key>hephaestus_tx06.png</key>
 			<dict>
 				<key>width</key>
-				<integer>124</integer>
+				<integer>67</integer>
 				<key>height</key>
-				<integer>124</integer>
+				<integer>51</integer>
 				<key>originalWidth</key>
 				<integer>124</integer>
 				<key>originalHeight</key>
 				<integer>124</integer>
 				<key>x</key>
-				<integer>126</integer>
+				<integer>78</integer>
 				<key>y</key>
 				<integer>0</integer>
 				<key>offsetX</key>
-				<real>0</real>
+				<real>2.5</real>
 				<key>offsetY</key>
-				<real>0</real>
+				<real>-19.5</real>
 			</dict>
 			<key>hephaestus_tx07.png</key>
 			<dict>
 				<key>width</key>
-				<integer>124</integer>
+				<integer>65</integer>
 				<key>height</key>
-				<integer>124</integer>
+				<integer>63</integer>
 				<key>originalWidth</key>
 				<integer>124</integer>
 				<key>originalHeight</key>
 				<integer>124</integer>
 				<key>x</key>
-				<integer>252</integer>
+				<integer>147</integer>
 				<key>y</key>
 				<integer>0</integer>
 				<key>offsetX</key>
-				<real>0</real>
+				<real>5.5</real>
 				<key>offsetY</key>
-				<real>0</real>
+				<real>-14.5</real>
 			</dict>
 			<key>hephaestus_tx08.png</key>
 			<dict>
 				<key>width</key>
-				<integer>50</integer>
+				<integer>44</integer>
 				<key>height</key>
-				<integer>48</integer>
+				<integer>32</integer>
 				<key>originalWidth</key>
 				<integer>50</integer>
 				<key>originalHeight</key>
 				<integer>48</integer>
 				<key>x</key>
-				<integer>378</integer>
+				<integer>214</integer>
 				<key>y</key>
 				<integer>0</integer>
 				<key>offsetX</key>
-				<real>0</real>
+				<real>-2</real>
 				<key>offsetY</key>
-				<real>0</real>
+				<real>-7</real>
 			</dict>
 			<key>hephaestus_tx09.png</key>
 			<dict>
 				<key>width</key>
-				<integer>50</integer>
+				<integer>26</integer>
 				<key>height</key>
-				<integer>48</integer>
+				<integer>25</integer>
 				<key>originalWidth</key>
 				<integer>50</integer>
 				<key>originalHeight</key>
 				<integer>48</integer>
 				<key>x</key>
-				<integer>430</integer>
+				<integer>260</integer>
 				<key>y</key>
 				<integer>0</integer>
 				<key>offsetX</key>
-				<real>0</real>
+				<real>-2</real>
 				<key>offsetY</key>
-				<real>0</real>
+				<real>1.5</real>
 			</dict>
 			<key>hephaestus_tx10.png</key>
 			<dict>
 				<key>width</key>
-				<integer>50</integer>
+				<integer>22</integer>
 				<key>height</key>
-				<integer>48</integer>
+				<integer>23</integer>
 				<key>originalWidth</key>
 				<integer>50</integer>
 				<key>originalHeight</key>
 				<integer>48</integer>
 				<key>x</key>
-				<integer>0</integer>
+				<integer>288</integer>
 				<key>y</key>
-				<integer>126</integer>
+				<integer>0</integer>
 				<key>offsetX</key>
-				<real>0</real>
+				<real>-2</real>
 				<key>offsetY</key>
-				<real>0</real>
+				<real>1.5</real>
 			</dict>
 			<key>hephaestus_0009.png</key>
 			<dict>
 				<key>width</key>
-				<integer>64</integer>
+				<integer>61</integer>
 				<key>height</key>
-				<integer>53</integer>
+				<integer>52</integer>
 				<key>originalWidth</key>
 				<integer>64</integer>
 				<key>originalHeight</key>
 				<integer>53</integer>
 				<key>x</key>
-				<integer>52</integer>
+				<integer>312</integer>
 				<key>y</key>
-				<integer>126</integer>
+				<integer>0</integer>
 				<key>offsetX</key>
-				<real>0</real>
+				<real>0.5</real>
 				<key>offsetY</key>
-				<real>0</real>
+				<real>-0.5</real>
 			</dict>
 			<key>hephaestus_0011.png</key>
 			<dict>
 				<key>width</key>
-				<integer>64</integer>
+				<integer>61</integer>
 				<key>height</key>
-				<integer>53</integer>
+				<integer>52</integer>
 				<key>originalWidth</key>
 				<integer>64</integer>
 				<key>originalHeight</key>
 				<integer>53</integer>
 				<key>x</key>
-				<integer>118</integer>
+				<integer>375</integer>
 				<key>y</key>
-				<integer>126</integer>
+				<integer>0</integer>
 				<key>offsetX</key>
-				<real>0</real>
+				<real>0.5</real>
 				<key>offsetY</key>
-				<real>0</real>
+				<real>-0.5</real>
+			</dict>
+			<key>hephaestus_0012.png</key>
+			<dict>
+				<key>width</key>
+				<integer>61</integer>
+				<key>height</key>
+				<integer>52</integer>
+				<key>originalWidth</key>
+				<integer>64</integer>
+				<key>originalHeight</key>
+				<integer>53</integer>
+				<key>x</key>
+				<integer>438</integer>
+				<key>y</key>
+				<integer>0</integer>
+				<key>offsetX</key>
+				<real>0.5</real>
+				<key>offsetY</key>
+				<real>-0.5</real>
 			</dict>
 			<key>hephaestus_0010.png</key>
 			<dict>
@@ -167,9 +186,9 @@
 				<key>originalHeight</key>
 				<integer>32</integer>
 				<key>x</key>
-				<integer>184</integer>
+				<integer>501</integer>
 				<key>y</key>
-				<integer>126</integer>
+				<integer>0</integer>
 				<key>offsetX</key>
 				<real>0</real>
 				<key>offsetY</key>
@@ -178,7 +197,7 @@
 			<key>hephaestus_0006.png</key>
 			<dict>
 				<key>width</key>
-				<integer>17</integer>
+				<integer>16</integer>
 				<key>height</key>
 				<integer>20</integer>
 				<key>originalWidth</key>
@@ -186,89 +205,51 @@
 				<key>originalHeight</key>
 				<integer>20</integer>
 				<key>x</key>
-				<integer>232</integer>
+				<integer>549</integer>
 				<key>y</key>
-				<integer>126</integer>
+				<integer>0</integer>
 				<key>offsetX</key>
-				<real>0</real>
-				<key>offsetY</key>
-				<real>0</real>
-			</dict>
-			<key>hephaestus_0002.png</key>
-			<dict>
-				<key>width</key>
-				<integer>22</integer>
-				<key>height</key>
-				<integer>36</integer>
-				<key>originalWidth</key>
-				<integer>22</integer>
-				<key>originalHeight</key>
-				<integer>36</integer>
-				<key>x</key>
-				<integer>251</integer>
-				<key>y</key>
-				<integer>126</integer>
-				<key>offsetX</key>
-				<real>0</real>
+				<real>0.5</real>
 				<key>offsetY</key>
 				<real>0</real>
 			</dict>
 			<key>hephaestus_0005.png</key>
 			<dict>
 				<key>width</key>
-				<integer>28</integer>
+				<integer>27</integer>
 				<key>height</key>
-				<integer>30</integer>
+				<integer>29</integer>
 				<key>originalWidth</key>
 				<integer>28</integer>
 				<key>originalHeight</key>
 				<integer>30</integer>
 				<key>x</key>
-				<integer>275</integer>
+				<integer>567</integer>
 				<key>y</key>
-				<integer>126</integer>
+				<integer>0</integer>
 				<key>offsetX</key>
-				<real>0</real>
+				<real>-0.5</real>
 				<key>offsetY</key>
-				<real>0</real>
+				<real>0.5</real>
 			</dict>
 			<key>hephaestus_0007.png</key>
 			<dict>
 				<key>width</key>
 				<integer>25</integer>
 				<key>height</key>
-				<integer>28</integer>
+				<integer>27</integer>
 				<key>originalWidth</key>
 				<integer>25</integer>
 				<key>originalHeight</key>
 				<integer>28</integer>
 				<key>x</key>
-				<integer>305</integer>
+				<integer>596</integer>
 				<key>y</key>
-				<integer>126</integer>
+				<integer>0</integer>
 				<key>offsetX</key>
 				<real>0</real>
 				<key>offsetY</key>
-				<real>0</real>
-			</dict>
-			<key>hephaestus_0001.png</key>
-			<dict>
-				<key>width</key>
-				<integer>29</integer>
-				<key>height</key>
-				<integer>28</integer>
-				<key>originalWidth</key>
-				<integer>29</integer>
-				<key>originalHeight</key>
-				<integer>28</integer>
-				<key>x</key>
-				<integer>332</integer>
-				<key>y</key>
-				<integer>126</integer>
-				<key>offsetX</key>
-				<real>0</real>
-				<key>offsetY</key>
-				<real>0</real>
+				<real>0.5</real>
 			</dict>
 			<key>hephaestus_0004.png</key>
 			<dict>
@@ -281,9 +262,66 @@
 				<key>originalHeight</key>
 				<integer>44</integer>
 				<key>x</key>
-				<integer>363</integer>
+				<integer>623</integer>
 				<key>y</key>
-				<integer>126</integer>
+				<integer>0</integer>
+				<key>offsetX</key>
+				<real>0</real>
+				<key>offsetY</key>
+				<real>0</real>
+			</dict>
+			<key>hephaestus_0001.png</key>
+			<dict>
+				<key>width</key>
+				<integer>29</integer>
+				<key>height</key>
+				<integer>27</integer>
+				<key>originalWidth</key>
+				<integer>29</integer>
+				<key>originalHeight</key>
+				<integer>28</integer>
+				<key>x</key>
+				<integer>659</integer>
+				<key>y</key>
+				<integer>0</integer>
+				<key>offsetX</key>
+				<real>0</real>
+				<key>offsetY</key>
+				<real>0.5</real>
+			</dict>
+			<key>hephaestus_0002.png</key>
+			<dict>
+				<key>width</key>
+				<integer>21</integer>
+				<key>height</key>
+				<integer>36</integer>
+				<key>originalWidth</key>
+				<integer>22</integer>
+				<key>originalHeight</key>
+				<integer>36</integer>
+				<key>x</key>
+				<integer>690</integer>
+				<key>y</key>
+				<integer>0</integer>
+				<key>offsetX</key>
+				<real>-0.5</real>
+				<key>offsetY</key>
+				<real>0</real>
+			</dict>
+			<key>hephaestus_0003.png</key>
+			<dict>
+				<key>width</key>
+				<integer>47</integer>
+				<key>height</key>
+				<integer>32</integer>
+				<key>originalWidth</key>
+				<integer>47</integer>
+				<key>originalHeight</key>
+				<integer>32</integer>
+				<key>x</key>
+				<integer>713</integer>
+				<key>y</key>
+				<integer>0</integer>
 				<key>offsetX</key>
 				<real>0</real>
 				<key>offsetY</key>
@@ -300,28 +338,9 @@
 				<key>originalHeight</key>
 				<integer>27</integer>
 				<key>x</key>
-				<integer>399</integer>
+				<integer>762</integer>
 				<key>y</key>
-				<integer>126</integer>
-				<key>offsetX</key>
-				<real>0</real>
-				<key>offsetY</key>
-				<real>0</real>
-			</dict>
-			<key>hephaestus_0003.png</key>
-			<dict>
-				<key>width</key>
-				<integer>47</integer>
-				<key>height</key>
-				<integer>32</integer>
-				<key>originalWidth</key>
-				<integer>47</integer>
-				<key>originalHeight</key>
-				<integer>32</integer>
-				<key>x</key>
-				<integer>425</integer>
-				<key>y</key>
-				<integer>126</integer>
+				<integer>0</integer>
 				<key>offsetX</key>
 				<real>0</real>
 				<key>offsetY</key>
@@ -330,7 +349,7 @@
 			<key>hephaestus_tx01.png</key>
 			<dict>
 				<key>width</key>
-				<integer>124</integer>
+				<integer>115</integer>
 				<key>height</key>
 				<integer>124</integer>
 				<key>originalWidth</key>
@@ -338,18 +357,18 @@
 				<key>originalHeight</key>
 				<integer>124</integer>
 				<key>x</key>
-				<integer>0</integer>
+				<integer>788</integer>
 				<key>y</key>
-				<integer>181</integer>
+				<integer>0</integer>
 				<key>offsetX</key>
-				<real>0</real>
+				<real>2.5</real>
 				<key>offsetY</key>
 				<real>0</real>
 			</dict>
 			<key>hephaestus_tx02.png</key>
 			<dict>
 				<key>width</key>
-				<integer>124</integer>
+				<integer>112</integer>
 				<key>height</key>
 				<integer>124</integer>
 				<key>originalWidth</key>
@@ -357,70 +376,51 @@
 				<key>originalHeight</key>
 				<integer>124</integer>
 				<key>x</key>
-				<integer>126</integer>
+				<integer>905</integer>
 				<key>y</key>
-				<integer>181</integer>
+				<integer>0</integer>
 				<key>offsetX</key>
-				<real>0</real>
+				<real>5</real>
 				<key>offsetY</key>
 				<real>0</real>
 			</dict>
 			<key>hephaestus_tx03.png</key>
 			<dict>
 				<key>width</key>
-				<integer>124</integer>
+				<integer>109</integer>
 				<key>height</key>
-				<integer>124</integer>
+				<integer>123</integer>
 				<key>originalWidth</key>
 				<integer>124</integer>
 				<key>originalHeight</key>
 				<integer>124</integer>
 				<key>x</key>
-				<integer>252</integer>
+				<integer>0</integer>
 				<key>y</key>
-				<integer>181</integer>
+				<integer>126</integer>
 				<key>offsetX</key>
-				<real>0</real>
+				<real>6.5</real>
 				<key>offsetY</key>
-				<real>0</real>
+				<real>0.5</real>
 			</dict>
 			<key>hephaestus_tx04.png</key>
 			<dict>
 				<key>width</key>
-				<integer>124</integer>
+				<integer>106</integer>
 				<key>height</key>
-				<integer>124</integer>
+				<integer>123</integer>
 				<key>originalWidth</key>
 				<integer>124</integer>
 				<key>originalHeight</key>
 				<integer>124</integer>
 				<key>x</key>
-				<integer>378</integer>
+				<integer>111</integer>
 				<key>y</key>
-				<integer>181</integer>
+				<integer>126</integer>
 				<key>offsetX</key>
-				<real>0</real>
+				<real>2</real>
 				<key>offsetY</key>
-				<real>0</real>
-			</dict>
-			<key>shadow01.png</key>
-			<dict>
-				<key>width</key>
-				<integer>56</integer>
-				<key>height</key>
-				<integer>18</integer>
-				<key>originalWidth</key>
-				<integer>56</integer>
-				<key>originalHeight</key>
-				<integer>18</integer>
-				<key>x</key>
-				<integer>0</integer>
-				<key>y</key>
-				<integer>307</integer>
-				<key>offsetX</key>
-				<real>0</real>
-				<key>offsetY</key>
-				<real>0</real>
+				<real>0.5</real>
 			</dict>
 		</dict>
 		<key>metadata</key>
@@ -432,14 +432,14 @@
 			<key>realTextureFileName</key>
 			<string>hephaestus0.png</string>
 			<key>size</key>
-			<string>{512,512}</string>
+			<string>{1024,1024}</string>
 		</dict>
 		<key>texture</key>
 		<dict>
 			<key>width</key>
-			<integer>512</integer>
+			<integer>1024</integer>
 			<key>height</key>
-			<integer>512</integer>
+			<integer>1024</integer>
 		</dict>
 	</dict>
 </plist>

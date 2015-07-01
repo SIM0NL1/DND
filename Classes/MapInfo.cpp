@@ -62,7 +62,7 @@ bool MapInfo::getJsonData(int iLev)
     if (iLev<doc.Size())
     {
         rapidjson::Value &v=doc[iLev];
-        int index = 0;
+        int index = 1;
         
         if (v[index].IsArray())
         {
@@ -219,6 +219,80 @@ bool MapInfo::getJsonData(int iLev)
     return true;
 
 }
+
+bool MapInfo::getJsonData()
+{
+    string filename="TimeLimitData.json";
+    rapidjson::Document doc;
+    //判断文件是否存在
+    if(!FileUtils::getInstance()->isFileExist(filename))
+    {
+        log("json file is not find [%s]",filename.c_str());
+        return false;
+    }
+    //读取文件数据，初始化doc
+    std::string data=FileUtils::getInstance()->getStringFromFile(filename);
+    doc.Parse<rapidjson::kParseDefaultFlags>(data.c_str());
+    //判断读取成功与否 和 是否为数组类型
+    if (doc.HasParseError() || !doc.IsArray())
+    {
+        log("get json data err!");
+        return false;
+    }
+    int iLev = 1;
+    if (iLev<doc.Size())
+    {
+        rapidjson::Value &v=doc[iLev];
+        int index = 0;
+        
+        if (v[index].IsArray())
+        {
+            for (int i = 0; i < v[index].Capacity(); i++)
+            {
+                m_vecGemType.push_back((GemType)v[index][i].GetInt());
+            }
+        }
+        index++;
+        
+        if (v[index].IsArray())
+        {
+            for (int i = 0; i < v[index].Capacity(); i++)
+            {
+                m_vecPassScore.push_back(v[index][i].GetInt());
+            }
+        }
+        index++;
+        
+        if (v[index].IsArray())
+        {
+            for (int i = 0; i < v[index].Capacity(); i++)
+            {
+                m_vecPassReward.push_back(v[index][i].GetInt());
+            }
+        }
+        index++;
+
+        
+        m_iPassTime = v[index++].GetInt();
+        
+        if (v[index].IsArray())
+        {
+            for (int i = 0; i < v[index].Capacity(); i++)
+            {
+                int iX = i/kMatrixWidth;
+                int iY = i%kMatrixWidth;
+                m_iArrMatrix[iX][iY] = v[index][i].GetInt();
+            }
+        }
+    }
+    else
+    {
+        log("yue jie ");
+        return false;
+    }
+    return true;
+}
+
 
 int** MapInfo::getMatrixMap()
 {
@@ -414,4 +488,34 @@ bool MapInfo::isMapBottom(int i, int j)
         return true;
     }
     return false;
+}
+
+int MapInfo::getPassScore(int index)
+{
+    if (index < m_vecPassScore.size())
+    {
+        return m_vecPassScore.at(index);
+    }
+    else
+    {
+        return 250*(index + 1)*(index + 1) + 750*(index + 1) + 1000;
+    }
+}
+
+int MapInfo::getPassReward(int index)
+{
+    if (index < m_vecPassReward.size())
+    {
+        return m_vecPassReward.at(index);
+    }
+    else
+    {
+        return 200*(index + 1) - 600;
+    }
+
+}
+
+int MapInfo::getPassTime()
+{
+    return m_iPassTime;
 }

@@ -1568,6 +1568,26 @@ void MapMatrix::dealFallDown(Layer* layer)
     }
 }
 
+void MapMatrix::dealFallDownColumn(Layer *layer, int row)
+{
+    int j,k;
+    
+    for(k=0;k<kMatrixWidth;k++)
+    {
+        if(fallDownFlagArray[row]==k)
+        {
+            for(j=0;j<kMatrixWidth;j++)
+            {
+                if(_mapMatrix[row][j]!=NoneInEdge && _mapMatrix[row][j]!=NoneInMiddle && _gemMatrix[row][j]==NULL)
+                {
+                    fillEmptyNew(layer, row, j);
+                }
+            }
+        }
+    }
+}
+
+
 void MapMatrix::beforeMatchGem(vector<AnimationWraper>* animationWraperVector,MyPoint& selectPoint,MyPoint& nextPoint)
 {
     findCenterPoint(selectPoint, nextPoint);

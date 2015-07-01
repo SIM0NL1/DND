@@ -7,28 +7,28 @@
             <key>battlemap_5_dark.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,74},{70,70}}</string>
+                <string>{{2,78},{74,74}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{70,70}}</string>
+                <string>{{0,0},{74,74}}</string>
                 <key>sourceSize</key>
-                <string>{70,70}</string>
+                <string>{74,74}</string>
             </dict>
             <key>battlemap_5_light.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,2},{70,70}}</string>
+                <string>{{2,2},{74,74}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{70,70}}</string>
+                <string>{{0,0},{74,74}}</string>
                 <key>sourceSize</key>
-                <string>{70,70}</string>
+                <string>{74,74}</string>
             </dict>
         </dict>
         <key>metadata</key>
@@ -40,7 +40,7 @@
             <key>size</key>
             <string>{128,256}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:92109c4e221cb26d80b13ec17139893f:1/1$</string>
+            <string>$TexturePacker:SmartUpdate:d0e168b4d4c51e55b8fcc37532b274a2:1/1$</string>
             <key>textureFileName</key>
             <string>map.png</string>
         </dict>

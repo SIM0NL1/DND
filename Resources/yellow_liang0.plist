@@ -7,13 +7,13 @@
 			<key>yellow_liang.png</key>
 			<dict>
 				<key>width</key>
-				<integer>70</integer>
+				<integer>74</integer>
 				<key>height</key>
-				<integer>70</integer>
+				<integer>74</integer>
 				<key>originalWidth</key>
-				<integer>70</integer>
+				<integer>74</integer>
 				<key>originalHeight</key>
-				<integer>70</integer>
+				<integer>74</integer>
 				<key>x</key>
 				<integer>0</integer>
 				<key>y</key>
@@ -28,19 +28,19 @@
 				<key>width</key>
 				<integer>67</integer>
 				<key>height</key>
-				<integer>60</integer>
+				<integer>69</integer>
 				<key>originalWidth</key>
-				<integer>70</integer>
+				<integer>74</integer>
 				<key>originalHeight</key>
-				<integer>70</integer>
+				<integer>74</integer>
 				<key>x</key>
-				<integer>72</integer>
+				<integer>76</integer>
 				<key>y</key>
 				<integer>0</integer>
 				<key>offsetX</key>
-				<real>1.5</real>
+				<real>0.5</real>
 				<key>offsetY</key>
-				<real>1</real>
+				<real>0.5</real>
 			</dict>
 		</dict>
 		<key>metadata</key>

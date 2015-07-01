@@ -1,4 +1,4 @@
-//
+﻿//
 //	GameSlide.cpp
 //	Author:Simon
 //	Date:  2015.5.21
@@ -136,7 +136,7 @@ void GameSlide::setMainInterface(float distance,SlideDirection direction)
 	case SlideDirection::SlideRight:
 		{
 			CCLOG("slide Right distance = %f",distance);
-			if (pageId && GameFunctions::getInstance()->g_bFlagForMission)
+			if (pageId)
 			{
 				percentage = distance/(GLB_SIZE.width*0.4);
 				if (distance <= GLB_SIZE.width*0.4)
@@ -155,7 +155,7 @@ void GameSlide::setMainInterface(float distance,SlideDirection direction)
 	case SlideDirection::SlideLeft:
 		{
 			CCLOG("slide Left distance = %f",distance);
-			if (!pageId && GameFunctions::getInstance()->g_bFlagForMission)
+			if (!pageId)
 			{
 				percentage = distance/(GLB_SIZE.width*0.4);
 				if (distance <= GLB_SIZE.width*0.4)

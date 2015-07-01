@@ -46,9 +46,9 @@
 <key>sourcePositionVariancey</key>
 <real>0.000000</real>
 <key>sourcePositionx</key>
-<real>190.000000</real>
+<real>225.000000</real>
 <key>sourcePositiony</key>
-<real>425.000000</real>
+<real>416.000000</real>
 <key>speed</key>
 <real>100.000000</real>
 <key>speedVariance</key>
@@ -100,5 +100,5 @@
 <key>emitterType</key>
 <real>0</real>
 <key>textureFileName</key>
-<string>white_suilie.png</string>
+<string>white_sl.png</string>
 </dict></plist>

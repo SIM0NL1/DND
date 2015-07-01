@@ -40,7 +40,9 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
     // create a scene. it's an autorelease object
     auto scene = HelloWorld::createScene();
-
+    
+    //开启深度测试
+    //director->setDepthTest(true);
     // run
     director->runWithScene(scene);
 

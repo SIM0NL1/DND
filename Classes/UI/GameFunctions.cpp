@@ -1,4 +1,4 @@
-//
+﻿//
 //  GameFunctions.h
 //  author:Simon
 //
@@ -13,7 +13,6 @@ GameFunctions* GameFunctions :: m_self = nullptr;
 GameFunctions :: GameFunctions()
 {
 	m_sFilePath = "";
-	g_bFlagForMission = true;
 }
 
 GameFunctions :: ~GameFunctions()
@@ -43,4 +42,3 @@ const char* GameFunctions::readResourcesPath(string fileName)
 	GameFunctions::getInstance()->m_sFilePath="UI/"+fileName;		//防止资源路径修改;
 	return GameFunctions::getInstance()->m_sFilePath.c_str();
 }
-

@@ -20,7 +20,7 @@ USING_NS_CC ;
 #define kRenewGemTime 0.5//重排持续时间
 
 #define kChangeWaitTime 0.3//交换错误返回之前等待的时间
-#define kChangeMoveTime 0.21//交换时移动的时间
+#define kChangeMoveTime 0.3//交换时移动的时间
 #define kChangeScaleFirstStepTime 0.08//交换变化第一步
 #define kchangeScaleSecondStepTime 0.06//交换变化第二步
 #define kFallMoveTime 0.1//下落一格所需时间
@@ -318,7 +318,7 @@ struct AnimationWraper
     Gem*  GemToRemove2;
     Gem*  GemToRemove3;
     
-    int flagArray[6];
+    int flagArray[10];
     int flagArrayLength;
     
     AnimationWraper(Gem* f,AnimationID aid,AnimationPriority p)

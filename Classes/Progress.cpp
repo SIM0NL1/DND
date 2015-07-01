@@ -8,25 +8,38 @@
 
 #include "Progress.h"
 
-bool Progress::init(const char* background, const char* fillname)
+bool Progress::init(const char* background, const char* fillname, bool vertical)
 {
     this->initWithFile(background);
     ProgressTimer* fill = ProgressTimer::create(Sprite::create(fillname));
     this->setFill(fill);
     this->addChild(fill);
     
+    _fHeight = this->getBoundingBox().size.height;
+    
     fill->setType(ProgressTimer::Type::BAR);
-    fill->setMidpoint(Point(0,0.5));
-    fill->setBarChangeRate(Point(1.0, 0));
+    
+    if (vertical)
+    {
+        fill->setMidpoint(Point(0.5,0));
+        fill->setBarChangeRate(Point(0, 1.0));
+    }
+    else
+    {
+        fill->setMidpoint(Point(0,0.5));
+        fill->setBarChangeRate(Point(1.0, 0));
+    }
+    
+    
     fill->setPosition(this->getContentSize()/2);
     fill->setPercentage(100);
     return true;
 }
 
-Progress* Progress::create(const char* background, const char* fillname)
+Progress* Progress::create(const char* background, const char* fillname, bool vertical)
 {
     Progress* progress = new Progress();
-    if(progress && progress->init(background,fillname))
+    if(progress && progress->init(background,fillname,vertical))
     {
         progress->autorelease();
         return progress;

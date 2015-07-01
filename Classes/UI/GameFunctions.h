@@ -1,4 +1,4 @@
-//
+﻿//
 //  GameFunctions.h
 //  author:Simon
 //
@@ -25,9 +25,24 @@ public:
 	static GameFunctions* getInstance();
 	static void deleteGameFunctions();
 	const char* readResourcesPath(string fileName);
-	bool g_bFlagForMission;		//关卡按钮的移动触摸干扰了地图的移动，特设此标记;
 	string g_sChineseName;
+    CC_SYNTHESIZE(float,verticalOffset,VerticalOffset);
 
+    template<typename T>
+    void vertexZ(T** pSender,bool flag=true)
+    {
+        if (flag)
+        {
+            //(*pSender)->setPositionZ(Z_Second);
+        }
+        else
+        {
+            //(*pSender)->setPositionZ(Z_First);
+        }
+        
+    }
+
+    
 private:
 	GameFunctions();
 	virtual ~GameFunctions();

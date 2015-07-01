@@ -4,6 +4,44 @@
 	<dict>
 		<key>frames</key>
 		<dict>
+			<key>qiehuan_05.png</key>
+			<dict>
+				<key>width</key>
+				<integer>126</integer>
+				<key>height</key>
+				<integer>141</integer>
+				<key>originalWidth</key>
+				<integer>149</integer>
+				<key>originalHeight</key>
+				<integer>162</integer>
+				<key>x</key>
+				<integer>0</integer>
+				<key>y</key>
+				<integer>0</integer>
+				<key>offsetX</key>
+				<real>2.5</real>
+				<key>offsetY</key>
+				<real>-10.5</real>
+			</dict>
+			<key>qiehuan_04.png</key>
+			<dict>
+				<key>width</key>
+				<integer>47</integer>
+				<key>height</key>
+				<integer>47</integer>
+				<key>originalWidth</key>
+				<integer>56</integer>
+				<key>originalHeight</key>
+				<integer>57</integer>
+				<key>x</key>
+				<integer>128</integer>
+				<key>y</key>
+				<integer>0</integer>
+				<key>offsetX</key>
+				<real>1.5</real>
+				<key>offsetY</key>
+				<real>-2</real>
+			</dict>
 			<key>qiehuan_03.png</key>
 			<dict>
 				<key>width</key>
@@ -15,7 +53,7 @@
 				<key>originalHeight</key>
 				<integer>36</integer>
 				<key>x</key>
-				<integer>0</integer>
+				<integer>177</integer>
 				<key>y</key>
 				<integer>0</integer>
 				<key>offsetX</key>
@@ -26,15 +64,15 @@
 			<key>qiehuan_01.png</key>
 			<dict>
 				<key>width</key>
-				<integer>153</integer>
+				<integer>175</integer>
 				<key>height</key>
-				<integer>166</integer>
+				<integer>188</integer>
 				<key>originalWidth</key>
-				<integer>155</integer>
+				<integer>193</integer>
 				<key>originalHeight</key>
-				<integer>172</integer>
+				<integer>210</integer>
 				<key>x</key>
-				<integer>69</integer>
+				<integer>246</integer>
 				<key>y</key>
 				<integer>0</integer>
 				<key>offsetX</key>
@@ -42,24 +80,157 @@
 				<key>offsetY</key>
 				<real>1</real>
 			</dict>
-			<key>qiehuan_02.png</key>
+			<key>dahuo_01.png</key>
 			<dict>
 				<key>width</key>
-				<integer>80</integer>
+				<integer>122</integer>
 				<key>height</key>
-				<integer>223</integer>
+				<integer>323</integer>
 				<key>originalWidth</key>
-				<integer>99</integer>
+				<integer>126</integer>
 				<key>originalHeight</key>
-				<integer>246</integer>
+				<integer>363</integer>
 				<key>x</key>
-				<integer>224</integer>
+				<integer>423</integer>
+				<key>y</key>
+				<integer>0</integer>
+				<key>offsetX</key>
+				<real>-2</real>
+				<key>offsetY</key>
+				<real>-13</real>
+			</dict>
+			<key>dahuo_02.png</key>
+			<dict>
+				<key>width</key>
+				<integer>123</integer>
+				<key>height</key>
+				<integer>329</integer>
+				<key>originalWidth</key>
+				<integer>126</integer>
+				<key>originalHeight</key>
+				<integer>363</integer>
+				<key>x</key>
+				<integer>547</integer>
+				<key>y</key>
+				<integer>0</integer>
+				<key>offsetX</key>
+				<real>-1.5</real>
+				<key>offsetY</key>
+				<real>-8</real>
+			</dict>
+			<key>dahuo_03.png</key>
+			<dict>
+				<key>width</key>
+				<integer>125</integer>
+				<key>height</key>
+				<integer>352</integer>
+				<key>originalWidth</key>
+				<integer>126</integer>
+				<key>originalHeight</key>
+				<integer>363</integer>
+				<key>x</key>
+				<integer>672</integer>
 				<key>y</key>
 				<integer>0</integer>
 				<key>offsetX</key>
 				<real>-0.5</real>
 				<key>offsetY</key>
-				<real>-0.5</real>
+				<real>-1.5</real>
+			</dict>
+			<key>dahuo_04.png</key>
+			<dict>
+				<key>width</key>
+				<integer>126</integer>
+				<key>height</key>
+				<integer>314</integer>
+				<key>originalWidth</key>
+				<integer>126</integer>
+				<key>originalHeight</key>
+				<integer>363</integer>
+				<key>x</key>
+				<integer>799</integer>
+				<key>y</key>
+				<integer>0</integer>
+				<key>offsetX</key>
+				<real>0</real>
+				<key>offsetY</key>
+				<real>-20.5</real>
+			</dict>
+			<key>dahuo_05.png</key>
+			<dict>
+				<key>width</key>
+				<integer>126</integer>
+				<key>height</key>
+				<integer>318</integer>
+				<key>originalWidth</key>
+				<integer>126</integer>
+				<key>originalHeight</key>
+				<integer>363</integer>
+				<key>x</key>
+				<integer>0</integer>
+				<key>y</key>
+				<integer>354</integer>
+				<key>offsetX</key>
+				<real>0</real>
+				<key>offsetY</key>
+				<real>-17.5</real>
+			</dict>
+			<key>dahuo_06.png</key>
+			<dict>
+				<key>width</key>
+				<integer>126</integer>
+				<key>height</key>
+				<integer>311</integer>
+				<key>originalWidth</key>
+				<integer>126</integer>
+				<key>originalHeight</key>
+				<integer>363</integer>
+				<key>x</key>
+				<integer>128</integer>
+				<key>y</key>
+				<integer>354</integer>
+				<key>offsetX</key>
+				<real>0</real>
+				<key>offsetY</key>
+				<real>-21</real>
+			</dict>
+			<key>dahuo_07.png</key>
+			<dict>
+				<key>width</key>
+				<integer>126</integer>
+				<key>height</key>
+				<integer>300</integer>
+				<key>originalWidth</key>
+				<integer>126</integer>
+				<key>originalHeight</key>
+				<integer>363</integer>
+				<key>x</key>
+				<integer>256</integer>
+				<key>y</key>
+				<integer>354</integer>
+				<key>offsetX</key>
+				<real>0</real>
+				<key>offsetY</key>
+				<real>-24.5</real>
+			</dict>
+			<key>dahuo_08.png</key>
+			<dict>
+				<key>width</key>
+				<integer>126</integer>
+				<key>height</key>
+				<integer>326</integer>
+				<key>originalWidth</key>
+				<integer>126</integer>
+				<key>originalHeight</key>
+				<integer>363</integer>
+				<key>x</key>
+				<integer>384</integer>
+				<key>y</key>
+				<integer>354</integer>
+				<key>offsetX</key>
+				<real>0</real>
+				<key>offsetY</key>
+				<real>-15.5</real>
 			</dict>
 		</dict>
 		<key>metadata</key>

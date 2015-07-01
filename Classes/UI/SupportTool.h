@@ -16,8 +16,8 @@ using namespace std;
       
 //////////////////////////////////////////////////////////////////////////  
       
-#define A2U(varString) wSupportTool::AStrToUTF8(varString).c_str() //宽字符
-#define W2U(varString) wSupportTool::WStrToUTF8(varString).c_str() //窄字符
+#define A2U(varString) wSupportTool::AStrToUTF8(varString).c_str() //宽字符; 
+#define W2U(varString) wSupportTool::WStrToUTF8(varString).c_str() //窄字符;
       
 //////////////////////////////////////////////////////////////////////////  
       

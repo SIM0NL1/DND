@@ -1,4 +1,4 @@
-//
+﻿//
 //  GameChallengeMap.cpp
 //  author:Simon
 //	
@@ -24,7 +24,7 @@ bool GameChallengeMap::init()
 {
 	do 
 	{
-		CC_BREAK_IF(!OverView::init());
+		CC_BREAK_IF(!OverTableView::init());
 		this->setFlipMap(true);
 		this->scrollViewForDistance();
 		return true;
@@ -60,7 +60,7 @@ TableViewCell* GameChallengeMap::tableCellAtIndex(TableView* table,ssize_t idx)
 		label->setColor(Color3B(0,0,0));
 		cell->addChild(label);
 
-		if (idx>=(12-MissionNum/10))	//如果130关，就是13，但必须是10的整数倍
+		if (idx>=(12-ci_NormalMissionNum/10))	//如果130关，就是13，但必须是10的整数倍
 		{
 			int missionId=120-idx*10;	//本单元最大关卡ID
 			for (int i=0;i<10;++i)
@@ -69,7 +69,7 @@ TableViewCell* GameChallengeMap::tableCellAtIndex(TableView* table,ssize_t idx)
 				mission->setTag(missionId);
 				mission->setAnchorPoint(Vec2::ZERO);
 				//取得关卡ID对应的坐标
-				Vec2 temp=GameUIData::getInstance()->getMissionPos(missionId);
+				Vec2 temp=GameUIData::getInstance()->getNormalMissionPos(missionId);
 				mission->setPosition(temp);
 				cell->addChild(mission);
 

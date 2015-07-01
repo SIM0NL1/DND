@@ -1,4 +1,4 @@
-//**************************************************************
+﻿//**************************************************************
 //@创建者:   Simon;
 //@创建时间: 2015/06/03;
 //@功能描述①: GameMissionSet.h;
@@ -26,6 +26,7 @@ public:
 	void BtnCall(Ref* pSender,Widget::TouchEventType type);
 	void onBtnStart();
 	void onBtnExit();
+
 
 private:
 	GameMissionSet();

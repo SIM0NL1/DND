@@ -117,6 +117,8 @@ protected:
     
     int                         _endGem;
     
+    bool                        _removeAlready;
+    
 public:
     Gem();
     
@@ -130,11 +132,19 @@ public:
     
     void                        setGemSkill(GemSkill sk);
     
-    void                        setNextSkill(GemSkill sk){_nextskill = sk;}
+    void                        setNextSkill(GemSkill sk);
+    
+    void                        changeSkill(){_skill = _nextskill; _nextskill = SkillNull;}
+    
+    GemSkill                    getNextSkill(){return _nextskill ;}
     
     bool                        getAutoSkill();
     
     void                        setAutoSkill(bool b);
+    
+    bool                        getRemoveAlready(){return _removeAlready;}
+    
+    void                        setRemoveAlready(bool b){_removeAlready = b;}
     
     void                        setSkillSpr();
     
@@ -189,6 +199,8 @@ public:
     virtual void                addScore(int count,bool isAffect);//如果count为0,则清空score,否则累加
     
     int                         getScore(){return _score;}
+    
+    void                        setScore(int s){_score = s;}
     
     void                        addScore(int s){_score+=s;}
     
@@ -263,7 +275,7 @@ public:
     
     virtual void                fallDownStart(); //下落开始
     
-    virtual void                fallDownEnd(); //下落结束
+    virtual void                fallDownEnd(Node *pSende , bool playMusic); //下落结束
     
     void                        sendFallDownEndMSG();
     
@@ -305,7 +317,7 @@ public:
     
     void                        addAction( FiniteTimeAction* action);
     
-    void                        fallDownToEnd();
+    void                        fallDownToEnd(bool playMusic);
     
     void                        clearAllAction();
     
@@ -381,6 +393,20 @@ public:
     void                        removeSameGem(Node *pSender ,GemType type);
     
     void                        removeSameSkill();
+    
+    void                        createSkill();
+    
+    void                        triggerSkill();
+    
+    void                        beforeExplode();
+    
+    void                        matchAll();
+    
+    void                        afterExplode();
+    
+    void                        sameSkillOver(Node *pSender ,GemType type);
+    
+    void                        aroundAnimation(Node *pSender);
 };
 
 class RedGem : public Gem

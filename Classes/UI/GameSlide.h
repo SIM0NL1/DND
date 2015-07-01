@@ -1,4 +1,4 @@
-//
+﻿//
 //	GameSlide.h
 //	Author:Simon
 //	Date:  2015.5.21

@@ -37,7 +37,15 @@ void DataCenter::initMapInfo(int level)
 {
     m_pMapInfo = new (std::nothrow) MapInfo();
     
-    m_pMapInfo->getJsonData( level);
+    if (m_bTimeLimit)
+    {
+        m_pMapInfo->getJsonData();
+    }
+    else
+    {
+        m_pMapInfo->getJsonData(level);
+    }
+    
 }
 
 MapInfo* DataCenter::getMapInfo()

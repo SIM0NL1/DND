@@ -1,4 +1,4 @@
-//
+﻿//
 //  GameChallengeMap.h
 //  author:Simon
 //	
@@ -10,9 +10,9 @@
 #define __GameChallengeMap_H__
 
 #include "GameFunctions.h"
-#include "OverView.h"
+#include "OverTableView.h"
 
-class GameChallengeMap : public OverView
+class GameChallengeMap : public OverTableView
 {
 public:
 	CREATE_FUNC(GameChallengeMap);

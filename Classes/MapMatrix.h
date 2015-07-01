@@ -60,6 +60,8 @@ public:
     
     void  beforeMatchGem(vector<AnimationWraper>* animationWraperVector,MyPoint& selectPoint,MyPoint& nextPoint);
     
+    void  dealFallDownColumn(Layer* layer ,int row);
+    
 private:
     MapInfo* _mapInfo;
     int **_mapMatrix;//地图矩阵

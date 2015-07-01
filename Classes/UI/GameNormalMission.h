@@ -1,4 +1,4 @@
-//
+﻿//
 //	GameNormalMission.h
 //	Author:Simon
 //	Date:  2015.5.18
@@ -48,7 +48,6 @@ private:
 	Size m_dizuoSize;
 	Size m_stoneSize;
 	int missionStartNum;
-
 };
 
 #endif

@@ -1,4 +1,4 @@
-//**************************************************************
+﻿//**************************************************************
 //@创建者:   Simon;
 //@创建时间: 2015/06/01;
 //@功能描述①: 封装ScrollView,模拟PageView功能;
@@ -162,7 +162,6 @@ void OverPageView::performedAnimatedScroll(float dt)
 
 void OverPageView::adjust(float offset)
 {
-	log("OooooOOOOooOooooOOooOoOOOOOOOOOoOooo");
 	Vec2 vec;
 	float xOrY;
 	if (_direction == ScrollView::Direction::HORIZONTAL)

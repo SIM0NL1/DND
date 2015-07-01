@@ -109,6 +109,7 @@ private:
     
     CallFuncN*      _magicCallBack;
     
+    bool            _explodeAll;
 public:
     GameLayer();
     ~GameLayer();
@@ -181,7 +182,13 @@ public:
     
     void shining();
     
+    bool beforeWinnerMode();
+    
     void winnerMode(Ref *obj);
+    
+    void winnerModeStarfly(AnimationWraper aw);
+    
+    void winnerModeExplode(Node*pSender , AnimationWraper aw);
     
     void outStage(Ref* object);
     
@@ -256,19 +263,33 @@ public:
     
     void resetAnimation();
     
+    void test();
+    
     void roleRunAnimation(Armature* arm);
     
     bool sameGemVector();
     
-    void explodeAllGem(AnimationWraper aw ,CallFuncN* callback);
+    void explodeAllGem(Gem *gem);
     
-    void afterMatch(Ref *obj);
+    void afterExplode(Ref *obj);
     
     bool autoSkill();
     
     void flyToSame(MyPoint allPos , MyPoint samePos ,GemSkill skill);
     
     void propAnimation(MyPoint mp);
+    
+    void dealGemBeforeExplode();
+    
+    void displayScore(Ref *obj);
+    
+    void addScore(Node* sender,Point pos , int animID);
+    
+    void fallDownColumn(Node* sender, int row);
+    
+    void fallDownEndColumn(Node* sender,int data ,int row);
+    
+    void beforeFallDown(Node* sender,int data ,int row);
 };
 
 #endif	//__DRAGONEGGTRIPLE_GAMELAYER_H__

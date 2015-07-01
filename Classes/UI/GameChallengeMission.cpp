@@ -1,4 +1,4 @@
-//
+﻿//
 //	GameChallengeMission.cpp
 //	Author:Simon
 //	Date:  2015.5.21
@@ -8,6 +8,7 @@
 
 #include "GameChallengeMission.h"
 #include "GameUIData.h"
+#include "GameMusicControl.h"
 
 GameChallengeMission::GameChallengeMission()
 {
@@ -50,7 +51,7 @@ void GameChallengeMission::initMission()
 	m_labMissionId = Label :: createWithCharMap(RESOURCE("jindu_number.png"),16,25,'0');
 	m_labMissionId->setAnchorPoint(Vec2(0.5f,0.5f));
 	m_labMissionId->setPosition(Vec2(m_size.width*0.5,m_size.height*0.5));
-	m_btnCandle->addChild(m_labMissionId);
+	//m_btnCandle->addChild(m_labMissionId);
 
 }
 
@@ -82,20 +83,39 @@ void GameChallengeMission::setMissionState(GameMissionState state)
 
 void GameChallengeMission::missionOpen()
 {
-	m_btnCandle->setBright(true);
-	m_btnCandle->setEnabled(true);
-
-	// 	ArmatureDataManager::getInstance()->addArmatureFileInfo("animature/");
-	// 	Armature* candle = Armature::create("");
-	// 	candle->setAnchorPoint(Vec2(0.5f,0.5f));
-	// 	candle->setPosition(Vec2(m_size.width*0.5,m_size.height));
-	// 	m_btnCandle->addChild(candle,Z_First);
-	// 	candle->getAnimation()->playWithIndex(0);
+    m_btnCandle->setBright(true);
+    m_btnCandle->setEnabled(true);
+    
+    Sprite* pSpr = Sprite :: create();
+    pSpr->setAnchorPoint(Vec2(0.5f,0.5f));
+    pSpr->setPosition(Vec2(m_size.width*0.5-2,m_size.height+12));
+    m_btnCandle->addChild(pSpr);
+    
+    //-创建动作-;
+    Animation* pAniamtion = Animation :: create();
+    char strPic[50] = {0};
+    //-加载帧-;
+    for (int i=1;i<6;i++)
+    {
+        sprintf(strPic,"animature/lazhu/lazhu_0%d.png",i);
+        pAniamtion->addSpriteFrameWithFile(RESOURCE(strPic));
+    }
+    //-加载动作-;
+    pAniamtion->setDelayPerUnit(0.2f);
+    pAniamtion->setRestoreOriginalFrame(true);
+    pAniamtion->setLoops(-1);
+    //-创建动画-;
+    Animate* pAction = Animate :: create(pAniamtion);
+    pSpr->runAction(pAction);
 }
 
 void GameChallengeMission::missionNow()
 {
-
+    Sprite* halo = Sprite::create(RESOURCE("guangquan002.png"));
+    halo->setAnchorPoint(Vec2(0.5f,0.5f));
+    halo->setPosition(Vec2(m_size.width*0.5,m_size.height*0.5+12));
+    m_btnCandle->addChild(halo,Z_Back);
+    halo->runAction(RepeatForever::create(RotateBy::create(1.5f,360.f)));
 }
 
 void GameChallengeMission::BtnCall(Ref* pSender,Widget::TouchEventType type)
@@ -103,24 +123,18 @@ void GameChallengeMission::BtnCall(Ref* pSender,Widget::TouchEventType type)
 	int tag = ((Button*)pSender)->getTag();
 	switch (type)
 	{
-	case Widget::TouchEventType::BEGAN:
-	case Widget::TouchEventType::MOVED:
-		GameFunctions::getInstance()->g_bFlagForMission = false;
-		break;
-	case Widget::TouchEventType::ENDED:
-		{
-			GameFunctions::getInstance()->g_bFlagForMission = true;
-			if (tag)
-			{
-				onBtnCandle();
-			}
-			break;
-		}
-	case Widget::TouchEventType::CANCELED:
-		GameFunctions::getInstance()->g_bFlagForMission = true;
-		break;
-	default:
-		break;
+        case Widget::TouchEventType::BEGAN:break;
+        case Widget::TouchEventType::MOVED:break;
+        case Widget::TouchEventType::ENDED:
+            {
+                if (tag)
+                {
+                    onBtnCandle();
+                }
+                break;
+            }
+        case Widget::TouchEventType::CANCELED:break;
+        default:break;
 	}
 }
 
@@ -133,6 +147,7 @@ void GameChallengeMission::onBtnCandle()
 {
 	int id = this->getTag();
 	log(" %d GameChallengeMission :: onBtnCandle",id);
+    GameMusicControl::getInstance()->btnPlay(1);
 }
 
 void GameChallengeMission::setMissionPorperty(int id)
@@ -167,7 +182,7 @@ void GameChallengeMission::missionShow(int missionId)
 	static int startNum=1;
 	for (int i=1;i<=startNum;++i)
 	{
-		Sprite* start = Sprite::create(RESOURCE(StringUtils::format("baoshi_00%d.png",i)));
+		Sprite* start = Sprite::create(RESOURCE(StringUtils::format("baoshi2_00%d.png",i)));
 		start->setAnchorPoint(Vec2::ZERO);
 		start->setPosition(Vec2::ZERO);
 		m_btnCandle->addChild(start,Z_First);

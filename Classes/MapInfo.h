@@ -15,6 +15,9 @@ public:
 
 	int** getGemMap();
     int** getMatrixMap();
+    
+    bool getJsonData();
+    
     bool getJsonData(int iLev);
     
     int isFrozenInMap(int i ,int j);
@@ -38,6 +41,12 @@ public:
     
     bool isCollectPosition(int i ,int j);
     
+    int getPassScore(int index);
+    
+    int getPassReward(int index);
+    
+    int getPassTime();
+    
 private:
     
     vector <GemType> m_vecGemType;
@@ -60,6 +69,10 @@ private:
     vector<int> m_vecIceFloor2;
     
     vector<int> m_vecLeaf;
+    
+    vector<int> m_vecPassScore;
+    vector<int> m_vecPassReward;
+    int m_iPassTime;
     
 };
 

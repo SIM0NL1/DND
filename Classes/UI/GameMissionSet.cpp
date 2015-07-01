@@ -1,4 +1,4 @@
-//**************************************************************
+﻿//**************************************************************
 //@创建者:   Simon;
 //@创建时间: 2015/06/03;
 //@功能描述①: GameMissionSet.cpp;
@@ -10,6 +10,7 @@
 #include "../GameUILayer.h"
 #include "../DataCenter.h"
 #include "GameUIData.h"
+#include "GameMusicControl.h"
 
 GameMissionSet::GameMissionSet()
 {
@@ -98,15 +99,17 @@ void GameMissionSet::BtnCall(Ref* pSender,Widget::TouchEventType type)
 void GameMissionSet::onBtnStart()
 {
 	CCLOG(" Start ");
-    int id = GameUIData::getInstance()->getNormalMissionProgress();
+    GameMusicControl::getInstance()->btnPlay();
+    int id = GameUIData::getInstance()->getCurNormalMission();
     DataCenter::getInstance()->initMapInfo(id);
-    Director::getInstance()->replaceScene(GameUILayer::gameScene());
+    SCENE_CHANGE_NORMAL(SceneState::DDGameUILayer);
+    
 }
 
 void GameMissionSet::onBtnExit()
 {
 	CCLOG(" Exit ");
-	SCENE_CHANGE_FADE(SceneState::UIGameMain);
+    GameMusicControl::getInstance()->btnPlay();
+	SCENE_CHANGE_NORMAL(SceneState::UIGameMain);
 }
-
 

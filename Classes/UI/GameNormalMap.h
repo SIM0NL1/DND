@@ -1,4 +1,4 @@
-//
+﻿//
 //  GameNormalMap.h
 //  author:Simon
 //	
@@ -10,10 +10,10 @@
 #define __GameNormalMap_H__
 
 #include "GameFunctions.h"
-#include "OverView.h"
+#include "OverTableView.h"
 
 class GameNormalMission;
-class GameNormalMap : public OverView
+class GameNormalMap : public OverTableView
 {
 public:
 	CREATE_FUNC(GameNormalMap);
